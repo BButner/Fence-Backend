@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package FenceHostServer;
+
+message Monitor {
+  double top = 1;
+  double left = 2;
+  double width = 3;
+  double height = 4;
+  bool selected = 5;
+}
+
+message CursorLocation {
+  double x = 1;
+  double y = 2;
+}
+
+message ConfigResponse {
+  repeated Monitor monitors = 1;
+  bool lock_by_default = 2;
+}
+
+service FenceManager {
+  rpc GetConfig (google.protobuf.Empty) returns (ConfigResponse) {}
+  rpc GetCursorLocationStream (google.protobuf.Empty) returns (stream CursorLocation) {}
+}
