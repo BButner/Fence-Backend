@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <UserSecretsId>dotnet-fence_backend-79E47374-8752-4DF7-824D-0C4D610127B3</UserSecretsId>
         <RootNamespace>fence_backend</RootNamespace>
     </PropertyGroup>
@@ -17,7 +17,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
         <PackageReference Include="MonitorDetails" Version="1.0.0" />
         <PackageReference Include="System.Reactive" Version="5.0.0" />
     </ItemGroup>
