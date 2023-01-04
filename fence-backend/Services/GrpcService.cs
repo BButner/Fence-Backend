@@ -2,16 +2,13 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using Fence;
 using fence_backend.Models;
-using FenceHostServer;
-using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Monitor = FenceHostServer.Monitor;
 
 namespace fence_backend.Services
 {

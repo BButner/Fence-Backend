@@ -2,7 +2,7 @@
 {
     public static class MonitorExtension
     {
-        public static FenceHostServer.Monitor ToProtoMonitor( this Monitor monitor ) =>
+        public static Fence.Monitor ToProtoMonitor( this Monitor monitor ) =>
             new()
                 {
                 Width = monitor.Width,
