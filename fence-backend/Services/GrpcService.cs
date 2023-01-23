@@ -49,6 +49,13 @@ namespace fence_backend.Services
                     );
                 } );
 
+        public override async Task GetHeartbeatStream( Empty request,
+            IServerStreamWriter<Empty> responseStream,
+            ServerCallContext context ) =>
+            await Observable
+                .Interval( TimeSpan.FromSeconds( 1 ) )
+                .Do( _ => responseStream.WriteAsync( new Empty() ) );
+
         private ConfigService mConfigService;
         private MouseHookService mMouseHookService;
     }

@@ -25,4 +25,5 @@ message ConfigResponse {
 service FenceManager {
   rpc GetConfig (google.protobuf.Empty) returns (ConfigResponse) {}
   rpc GetCursorLocationStream (google.protobuf.Empty) returns (stream CursorLocation) {}
+  rpc GetHeartbeatStream (google.protobuf.Empty) returns (stream google.protobuf.Empty) {}
 }
