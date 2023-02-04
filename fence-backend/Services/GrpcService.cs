@@ -9,6 +9,7 @@ using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Monitor = Fence.Monitor;
 
 namespace fence_backend.Services
 {
@@ -52,6 +53,20 @@ namespace fence_backend.Services
             await Observable
                 .Interval( TimeSpan.FromSeconds( 1 ) )
                 .Do( _ => responseStream.WriteAsync( new Empty() ) );
+
+        public override Task<Monitor> ToggleMonitorSelected( Monitor request, ServerCallContext context )
+        {
+            var monitor = mConfigService.Config.Monitors.FirstOrDefault( m => m.Id.Equals( request.Id ) );
+            if( monitor == null )
+            {
+                throw new RpcException( new Status( StatusCode.NotFound, "Monitor not found" ) );
+            }
+
+            monitor.IsSelected = !monitor.IsSelected;
+            mConfigService.Config.Save();
+
+            return Task.FromResult( monitor.ToProtoMonitor() );
+        }
 
         private ConfigService mConfigService;
         private MouseHookService mMouseHookService;
