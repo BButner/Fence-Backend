@@ -31,9 +31,6 @@ namespace fence_backend.Services
 
             response.Monitors.AddRange( mConfigService.Config.Monitors.Select( monitor => monitor.ToProtoMonitor() ) );
 
-            Console.WriteLine( response.Monitors[0].Left );
-            Console.WriteLine( response.Monitors[1].Left );
-
             return Task.FromResult( response );
         }
 
