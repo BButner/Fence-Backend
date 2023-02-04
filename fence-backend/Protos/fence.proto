@@ -10,6 +10,7 @@ message Monitor {
   double width = 3;
   double height = 4;
   bool selected = 5;
+  string id = 6;
 }
 
 message CursorLocation {

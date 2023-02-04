@@ -8,5 +8,6 @@
         public double Height { get; set; }
         public bool IsPrimary { get; set; }
         public bool IsSelected { get; set; }
+        public string Id { get; set; }
     }
 }

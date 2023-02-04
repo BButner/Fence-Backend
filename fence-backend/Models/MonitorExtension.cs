@@ -9,7 +9,8 @@
                 Height = monitor.Height,
                 Left = monitor.Left,
                 Top = monitor.Top,
-                Selected = monitor.IsSelected
+                Selected = monitor.IsSelected,
+                Id = monitor.Id
                 };
     }
 }

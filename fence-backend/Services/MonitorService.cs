@@ -19,12 +19,13 @@ namespace fence_backend.Services
                 Width = monitor.Resolution.Width,
                 Height = monitor.Resolution.Height,
                 IsPrimary = monitor.IsPrimaryMonitor,
+                Id = monitor.Id
                 } );
 
             foreach( var monitor in Monitors )
             {
                 Console.WriteLine(
-                    $"Added Monitor with Top: {monitor.Top}, Left: {monitor.Left}, Width: {monitor.Width}, Height: {monitor.Height}, IsPrimary: {monitor.IsPrimary}" );
+                    $"Added Monitor with Top: {monitor.Top}, Left: {monitor.Left}, Width: {monitor.Width}, Height: {monitor.Height}, IsPrimary: {monitor.IsPrimary}, Id: {monitor.Id}" );
             }
         }
 
